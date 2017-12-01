@@ -31,12 +31,12 @@ public class SinaBlogProcessor implements PageProcessor {
             page.addTargetRequests(page.getHtml().links().regex(URL_LIST).all());
             //文章页
         } else {
-            page.putField("title", page.getHtml().css("div.articalTitle>h2", "text").all().toString());
+            page.putField("title", page.getHtml().css(".articalTitle>h2", "text").all().toString());
             page.putField("date",
-                    page.getHtml().css("div.articalTitle>span", "text").all().toString());
-            page.putField("author", page.getHtml().css("span.SG_txtb>strong", "text").all().toString());
-            page.putField("read", page.getHtml().css("div.IL>span", "text").all().toString());
-            page.putField("content", page.getHtml().css("div.articalContent", "text").all().toString());
+                    page.getHtml().css(".articalTitle>span", "text").all().toString());
+            page.putField("author", page.getHtml().css(".SG_txtb>strong", "text").all().toString());
+            page.putField("read", page.getHtml().css(".IL span:first-child" ).all().toString());
+            page.putField("content", page.getHtml().css(".articalContent").all().toString());
 
 //            page.putField("title", page.getHtml().xpath("//div[@class=\"articalTitle\"]//h2[@class=\"titName SG_txta\"]"));
 //            page.putField("date",

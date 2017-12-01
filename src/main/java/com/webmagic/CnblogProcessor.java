@@ -49,7 +49,7 @@ public class CnblogProcessor implements PageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider.create(new CnblogProcessor()).addUrl("https://www.cnblogs.com/#p2")
+        Spider.create(new CnblogProcessor()).addUrl("https://www.cnblogs.com/")
                 .addPipeline(new ConsolePipeline()).thread(5).run();
     }
 }
